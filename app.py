@@ -2,7 +2,8 @@ from flask import Flask, render_template, request, send_file
 import qrcode
 import io
 
-app = Flask(__name__)
+
+app = Flask(__name__, static_folder='static', template_folder='templates')
 
 @app.route('/')
 def index():
@@ -42,3 +43,4 @@ def generate_qr():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
